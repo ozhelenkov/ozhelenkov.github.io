@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Tenets · Teya</title>
+
+  <!-- Google Font: Figtree -->
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Brand palette */
+      --color-hero: #E0E722; /* Teya Lime */
+      --color-blue: #008BB9;
+      --color-white: #FFFFFF;
+      --color-black: #000000;
+      --color-light-gray: #F5F5F5;
+      --gap: 1rem;
+      /* Carousel sizes */
+      --button-size: 2.2rem;
+      --carousel-side-padding: calc(var(--button-size) + 0.75rem);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Figtree", sans-serif;
+      color: var(--color-black);
+      background-color: var(--color-white);
+      line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+      background: var(--color-hero);
+      color: var(--color-black);
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+    }
+    header img { height: 40px; width: auto; margin-right: 1rem; }
+    header h1 { font-size: 1.5rem; font-weight: 600; }
+    
+    .logo
+    {
+      margin: 8px 10px;
+    }
+
+    /* Main layout */
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+
+    section.tenet {
+      border-left: 8px solid var(--color-hero);
+      padding-left: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    section.tenet h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    section.tenet p.description { margin-bottom: 1rem; font-size: 1rem; max-width: 60ch; }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      padding: 0 var(--carousel-side-padding); /* create space for nav buttons so they don't overlap items */
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: var(--gap);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 0.5rem; /* accommodate possible scrollbar */
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+
+    .carousel-item {
+      flex: 0 0 250px;
+      background: var(--color-light-gray);
+      border-radius: 8px;
+      padding: 1rem;
+      scroll-snap-align: start;
+      opacity: 0.85;
+      font-size: 0.9rem;
+    }
+    .carousel-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+
+    /* Carousel nav buttons */
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: var(--button-size);
+      height: var(--button-size);
+      border-radius: 50%;
+      border: none;
+      background: var(--color-blue);
+      color: var(--color-white);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      z-index: 1;
+    }
+    .carousel-button:hover { background: var(--color-black); }
+    .carousel-button.prev { left: 0.25rem; }
+    .carousel-button.next { right: 0.25rem; }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .carousel-item { flex: 0 0 70%; }
+    }
+    @media (max-width: 480px) {
+      /*header { flex-direction: column; align-items: flex-start; }*/
+      header img { margin-bottom: 0.5rem; }
+      section.tenet { border-left-width: 6px; padding-left: 0.75rem; }
+      .carousel-button { display: none; } /* rely on swipe */
+      .carousel { padding: 0 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <svg class="logo" width="36px" height="100%" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M28.4769 0H7.5068C3.36174 0 0 3.36174 0 7.5068V28.4932C0 32.6383 3.36174 36 7.5068 36H28.4932C32.6383 36 36 32.6383 36 28.4932V7.5068C35.9837 3.36174 32.6219 0 28.4769 0ZM7.45784 15.34V9.10607C10.9991 9.10607 14.2303 10.4606 16.6618 12.6636C15.2257 14.3445 14.1487 16.3354 13.5449 18.5059C12.1904 16.5966 9.97099 15.34 7.45784 15.34ZM28.5258 15.34C24.4297 15.34 21.117 18.6691 21.117 22.7489V26.8776H14.8667V22.7489C14.8667 19.4524 16.0417 16.417 17.9837 14.0508C20.4968 11.0154 24.2829 9.08976 28.5258 9.08976V15.34Z" fill="#151515"></path><path d="M28.5258 15.34C24.4297 15.34 21.1169 18.6691 21.1169 22.7488V26.8776H14.8667V22.7488C14.8667 19.4524 16.0417 16.417 17.9837 14.0508C20.4968 11.0154 24.2829 9.08974 28.5258 9.08974V15.34Z" fill="#DDE048"></path><path d="M7.45786 15.34V9.10606C10.9991 9.10606 14.2303 10.4606 16.6618 12.6636C15.2258 14.3445 14.1487 16.3354 13.5449 18.5059C12.1904 16.5965 9.971 15.34 7.45786 15.34Z" fill="white"></path></svg>
+    <h1>Engineering Tenets</h1>
+  </header>
+
+  <main class="container">
+    <!-- Tenet blocks omitted for brevity: identical placeholder structure as before -->
+    <!-- ⬇️ Tenet 1 example block (repeat for 9 tenets) -->
+    <section class="tenet" id="tenet-1">
+      <h2>Extreme Ownership 🚀</h2>
+      <p class="description">Own your system end-to-end—from design through production and beyond.  Ownership means proactively improving what you’ve built and continuously raising the bar on technical excellence.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You wire up dashboards and alerts that track business and technical metrics from day one.</p></div>
+          <div class="carousel-item"><p>You won’t launch until the readiness checklist—tests, docs, security, alerts, CI/CD—is solid green.</p></div>
+          <div class="carousel-item"><p>You pause feature work if your service burns through its error budget, restoring reliability first.</p></div>
+          <div class="carousel-item"><p>You write blameless post‑mortems, publish findings, and drive the fixes to done.</p></div>
+          <div class="carousel-item"><p>You share lessons in lunch‑and‑learns, raising the technical bar across teams.</p></div>
+          <div class="carousel-item"><p>You forecast total cost of ownership—run time, support, scaling—before choosing tech or committing a roadmap.</p></div>
+          <div class="carousel-item"><p>You coordinate rollouts with customer support and partner teams to minimize disruption.</p></div>
+          <div class="carousel-item"><p>You step in when a teammate or neighboring service struggles, even if it’s not “your” code.</p></div>
+          <div class="carousel-item"><p>You present your system’s health and roadmap regularly, making public commitments to improve.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-2">
+      <h2>Measure yourself based on impact, not effort 💥</h2>
+      <p class="description">PLACHOLDER</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-3">
+      <h2>Respond to Change Over Following a Plan 🔄</h2>
+      <p class="description">Welcome changing requirements and new things that you’ve learned.  Plan just enough to move forward confidently and be ready to pivot when it makes sense.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-4">
+      <h2>Prefer Simplicity over Perfection 🛠️ </h2>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-5">
+      <h2>AI First ✨</h2>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-6">
+      <h2>Radical Transparency and Communication🪞</h2>
+      <p class="description">Work in the open—backlogs, discussions, retrospectives etc. should be open to all.  Remain in constant collaboration and communication.  Share your successes and your failures, and celebrate those who share.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-7">
+      <h2>Take Ownership of Your Growth 🌱</h2>
+      <p class="description">Seek out knowledge, try new tools, and make time to grow your skills.  No one will do it for you.  Be a part of the Engineering community.  Share knowledge, ask questions, and be curious about others.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-8">
+      <h2>Prioritize with Judgment 🎯</h2>
+      <p class="description">We value quality and long-term thinking, but we also need constant (imperfect) progress, iteration and multitasking.  Find a balance between focusing on just one thing vs spinning a thousand plates.</p>
+      <div class="carousel">
+        <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
+          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
+          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
+          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
+          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+        </div>
+        <button class="carousel-button next" aria-label="Next example">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="tenet" id="tenet-9">
+      <h2>Have Fun! 🎉</h2>
+    </section>
+
+    <!-- Tenet 2‑9 blocks remain unchanged from previous version -->
+  </main>
+
+  <script>
+    document.querySelectorAll('.carousel').forEach((carousel) => {
+      const track = carousel.querySelector('.carousel-track');
+      const prevBtn = carousel.querySelector('.carousel-button.prev');
+      const nextBtn = carousel.querySelector('.carousel-button.next');
+      const getScrollAmount = () => carousel.clientWidth * 0.8;
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+          track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
