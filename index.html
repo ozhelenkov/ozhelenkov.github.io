@@ -130,8 +130,6 @@
   </header>
 
   <main class="container">
-    <!-- Tenet blocks omitted for brevity: identical placeholder structure as before -->
-    <!-- ⬇️ Tenet 1 example block (repeat for 9 tenets) -->
     <section class="tenet" id="tenet-1">
       <h2>Extreme Ownership 🚀</h2>
       <p class="description">Own your system end-to-end—from design through production and beyond.  Ownership means proactively improving what you’ve built and continuously raising the bar on technical excellence.</p>
@@ -164,10 +162,14 @@
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
+          <div class="carousel-item"><p>You cut checkout steps by one and raise conversion 8 % instead of polishing animations.</p></div>
+          <div class="carousel-item"><p>You spot a typo hurting SEO, fix it in minutes, and watch traffic climb the same day.</p></div>
+          <div class="carousel-item"><p>You delete an idle batch job and slash compute cost 40 %—no ticket needed.</p></div>
+          <div class="carousel-item"><p>You automate a weekly manual report, giving the team five hours back every sprint.</p></div>
+          <div class="carousel-item"><p>You challenge a bloated spec and ship a slimmer flow that still hits the KPI sooner.</p></div>
+          <div class="carousel-item"><p>You showcase latency‑drop graphs in your demo, not the lines of code you wrote.</p></div>
+          <div class="carousel-item"><p>You mentor a junior to deliver a feature faster than you could alone, multiplying impact.</p></div>
+          <div class="carousel-item"><p>You celebrate customer adoption metrics, not story‑point velocity.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -179,12 +181,13 @@
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
-          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
-          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You pivot mid‑sprint to meet new compliance rules and still hit launch day.</p></div>
+          <div class="carousel-item"><p>You swap vendors in a week when an API is sunset, keeping users unaware.</p></div>
+          <div class="carousel-item"><p>You re‑prioritize backlog after fresh user interviews surface a bigger pain point.</p></div>
+          <div class="carousel-item"><p>You gate new UI behind a feature flag and iterate daily on A/B results.</p></div>
+          <div class="carousel-item"><p>You pull a risky dependency during an incident rather than wait for the next quarter.</p></div>
+          <div class="carousel-item"><p>You revise roadmap when mobile traffic spikes, reallocating budget to responsive work.</p></div>
+          <div class="carousel-item"><p>You design plug‑in architecture so adding a new payment rail is a config change, not a rewrite.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -192,16 +195,17 @@
 
     <section class="tenet" id="tenet-4">
       <h2>Prefer Simplicity over Perfection 🛠️ </h2>
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="description">Ship the smallest clear fix that works—complexity is compounding debt. Favor readable, 3 a.m.-debuggable code and incremental improvements; polish only when it drives real customer value.</p>
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
-          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
-          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You store a setting in a YAML file instead of spinning up a new microservice.</p></div>
+          <div class="carousel-item"><p>You return plain JSON for an internal tool rather than over‑engineering GraphQL.</p></div>
+          <div class="carousel-item"><p>You remove an unused cache layer once metrics prove it adds no value.</p></div>
+          <div class="carousel-item"><p>You publish a short doc on a manual workaround instead of building heavy migration tooling.</p></div>
+          <div class="carousel-item"><p>You ship a CLI script for ops rather than delay release to build a full UI.</p></div>
+          <div class="carousel-item"><p>You prune stale feature flags monthly to keep the code path clean.</p></div>
+          <div class="carousel-item"><p>You pick a battle‑tested library over writing a bespoke algorithm that would age poorly.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -209,16 +213,19 @@
 
     <section class="tenet" id="tenet-5">
       <h2>AI First ✨</h2>
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="description">Put AI tools at your fingertips—copilots, test generators, code‑review bots—so routine work flies. Treat their suggestions as drafts, refine with judgment, and track the lift in speed and quality.</p>
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
-          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
-          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You lean on a copilot to draft tests, tweak the edge‑cases yourself, and halve time to green.</p></div>
+          <div class="carousel-item"><p>You let a code‑review bot catch stale secrets before the PR even pings your teammates.</p></div>
+          <div class="carousel-item"><p>You add an LLM draft reply to support tickets and cut average response time in half.</p></div>
+          <div class="carousel-item"><p>You generate a migration script with chat‑AI, verify constraints, and ship in minutes.</p></div>
+          <div class="carousel-item"><p>You cluster log errors with an LLM to find the top crash cause instead of scanning pages of stack traces.</p></div>
+          <div class="carousel-item"><p>You refactor legacy code side‑by‑side with copilot, removing dead paths twice as fast.</p></div>
+          <div class="carousel-item"><p>You auto‑create API mocks with generative AI, unblocking the front‑end the same day.</p></div>
+          <div class="carousel-item"><p>You summarize a 20‑page design doc into three bullet options, speeding stakeholder buy‑in.</p></div>
+          <div class="carousel-item"><p>You track cycle time and bug counts after adopting AI assistants and share the 25 % lift with the org.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -230,12 +237,13 @@
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
-          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
-          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You publish sprint retros—including misses—in a company‑wide channel.</p></div>
+          <div class="carousel-item"><p>You post the incident timeline minutes after recovery, inviting feedback.</p></div>
+          <div class="carousel-item"><p>You write an open RFC for a controversial design and welcome critique.</p></div>
+          <div class="carousel-item"><p>You keep the team’s OKR dashboard public and update it every Monday.</p></div>
+          <div class="carousel-item"><p>You announce your own production mistake in stand‑up and explain the fix.</p></div>
+          <div class="carousel-item"><p>You record feature demo videos and share them org‑wide for async visibility.</p></div>
+          <div class="carousel-item"><p>You request peer feedback on your growth plan and act on the suggestions.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -247,12 +255,11 @@
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
-          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
-          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You shadow another team’s on‑call week to broaden your domain skills.</p></div>
+          <div class="carousel-item"><p>You attend an external meetup and share key takeaways with the org.</p></div>
+          <div class="carousel-item"><p>You contribute a refactor to an open‑source library and get it merged upstream.</p></div>
+          <div class="carousel-item"><p>You host an internal workshop on the observability stack you just mastered.</p></div>
+          <div class="carousel-item"><p>You block weekly learning hours to explore a new language and demo what you build.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -264,12 +271,12 @@
       <div class="carousel">
         <button class="carousel-button prev" aria-label="Previous example">&#10094;</button>
         <div class="carousel-track">
-          <div class="carousel-item"><p>You build it, you run it—engineers who ship a service own its on‑call and production health.</p></div>
-          <div class="carousel-item"><p>You spot a slowdown before users notice and ship the fix proactively.</p></div>
-          <div class="carousel-item"><p>You reject code (even your own) that adds debt or hides intent, safeguarding quality.</p></div>
-          <div class="carousel-item"><p>You refactor a fragile path while adding a feature because future bugs are your responsibility.</p></div>
-          <div class="carousel-item"><p>You retire unused endpoints and features to keep the system lean.</p></div>
-          <div class="carousel-item"><p>You reserve sprint capacity for debt, tests, and observability—work that prevents tomorrow’s fires.</p></div>
+          <div class="carousel-item"><p>You drop a low‑impact stretch goal to fix a customer‑visible bug today.</p></div>
+          <div class="carousel-item"><p>You ship the 80/20 solution now and note TODOs for polish after launch.</p></div>
+          <div class="carousel-item"><p>You postpone adopting bleeding‑edge tech until the roadmap stabilizes.</p></div>
+          <div class="carousel-item"><p>You raise test coverage on the checkout path instead of adding a minor feature.</p></div>
+          <div class="carousel-item"><p>You split a massive task into milestones so value ships every week.</p></div>
+          <div class="carousel-item"><p>You negotiate scope with product to protect the team from burnout.</p></div>
         </div>
         <button class="carousel-button next" aria-label="Next example">&#10095;</button>
       </div>
@@ -279,7 +286,6 @@
       <h2>Have Fun! 🎉</h2>
     </section>
 
-    <!-- Tenet 2‑9 blocks remain unchanged from previous version -->
   </main>
 
   <script>
